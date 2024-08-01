@@ -1,0 +1,22 @@
+.a-outlined,
+.a-primary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 90px;
+    width: 355px;
+    border-radius: 48px;
+    font-size: 22px;
+}
+
+.a-primary {
+    background-color: rgba(252, 138, 34, 1);
+    color: white;
+}
+
+.a-outlined {
+    color: rgba(252, 138, 34, 1);
+    border: 1px solid rgba(252, 138, 34, 1);
+}
+

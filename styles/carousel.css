@@ -1,0 +1,93 @@
+.cards {
+    display: flex;
+    margin: 40px 12px;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    width: 135%;
+}
+
+.cards2 {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    flex-direction: row;
+    width: 150%;
+    margin: 32px 0;
+    margin-left: 60%;
+
+}
+
+.controls {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    img {
+        margin: 0 12px;
+    }
+}
+
+.card1 {
+    padding: 80px 60px;
+}
+.card1,
+.card2 {
+    border-radius: 16px;
+    background-color: #F7F7FA;
+    margin: 0 12px;
+    text-align: center;
+    transition: transform 0.5s ease;
+    font-size: 20px;
+
+    .card-author {
+        font-size: 16px;
+    }
+
+    .card-img-bg {
+        background-color: #FFF0E6;
+        border-radius: 8px 8px 0 0;
+        margin: 12px;
+    }
+
+    a {
+        background-color: #FFF0E6;
+        color: #FC8A22;
+        border-radius: 8px 8px 0 0;
+        padding: 4px 12px;
+    }
+}
+
+.card2 {
+    box-shadow: rgba(100, 100, 111, 0.15) 0px 5px 20px 0px;
+    margin: 20px;
+
+    img {
+        margin-top: -32px;
+    }
+
+    p {
+        margin-bottom: 24px;
+    }
+
+    a {
+        padding: 0 12px;
+        padding-top: 4px;
+    }
+}
+
+@media (max-width: 840px) {
+    .cards {
+        height: fit-content;
+        width: 300%;
+    }
+
+    .card1 {
+        padding: 80px 24px;
+    }
+    .card1,
+    .card2 {
+        height: fit-content;
+        width: 100%;
+    }
+}

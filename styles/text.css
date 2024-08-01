@@ -1,0 +1,84 @@
+@font-face {
+    font-family: "gilroy";
+    src: url("../assets/Gilroy/Gilroy-Medium.ttf") format("truetype");
+}
+@font-face {
+    font-family: "gilroy-thin";
+    src: url("../assets/Gilroy/Gilroy-Light.ttf") format("truetype");
+}
+
+p,
+a,
+h4 {
+    font-family: "gilroy", sans-serif;
+}
+
+h1 {
+    font-family: "gilroy-thin", sans-serif;
+
+    font-size: 60px;
+    line-height: 70px;
+    margin: 0;
+}
+h3 {
+    font-size: 44px;
+    line-height: 0;
+    font-family: "gilroy-thin", sans-serif;
+}
+h2 {
+    font-size: 48px;
+    line-height: 56px;
+    font-family: "gilroy-thin", sans-serif;
+}
+
+
+p {
+    font-size: 22px;
+}
+
+.txt-footer {
+    font-size: 12px;
+}
+.a-txt-form-radio {
+    color: rgba(252, 138, 34, 1);
+}
+.txt-form-radio {
+    color: #C4C4C4;
+}
+.a-txt-form-radio,
+.txt-form-radio {
+    font-size: 14px;
+}
+
+.a-map {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    text-decoration: underline;
+    color: black;
+    margin-top: 12px;
+
+    img {
+        width: 16px;
+        margin-top: 3px;
+        margin-left: 2px;
+    }
+}
+
+.txt-black {
+    color: black;
+    font-size: 18px;
+}
+.txt-benefits-desc {
+    color: white;
+    font-size: 18px;
+}
+
+.txt-white {
+    color: white;
+}
+.txt-orange {
+    color: rgba(252, 138, 34, 1);
+}
