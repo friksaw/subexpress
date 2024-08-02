@@ -58,6 +58,7 @@ body {
     }
 }
 .block4 {
+    overflow-x: hidden;
     .container {
         flex-direction: column;
     }
