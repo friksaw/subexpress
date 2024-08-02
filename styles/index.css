@@ -344,6 +344,8 @@ body {
     .card-benefits1-2 {
         min-height: 280px;
         height: fit-content;
+        text-align: center;
+        align-items: center;
     }
     .grid-benefits1 {
         flex-direction: column;
