@@ -1,0 +1,52 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 16px;
+    padding: 40px;
+    margin-left: 32px;
+    max-width: 490px;
+    min-width: 240px;
+    width: 100%;
+
+    input {
+        margin: 12px 0;
+        height: 64px;
+        border-radius: 52px;
+        border: 1px solid rgba(252, 138, 34, 1);
+    }
+    input::placeholder {
+        padding: 0 24px;
+        color: #B8B8B8;
+        font-size: 18px;
+    }
+
+    a {
+        margin-top: 12px;
+    }
+}
+
+
+.form-checkbox-container {
+    display: flex;
+    flex-direction: row;
+
+    img {
+        margin: 0 12px 0 0;
+    }
+
+    div {
+        margin-top: 24px;
+
+        p {
+            margin-top: 0;
+        }
+    }
+}
+
+@media (max-width: 880px) {
+    .form {
+        margin: 0 auto;
+        margin-top: 24px;
+    }
+}
