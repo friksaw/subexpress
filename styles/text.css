@@ -85,9 +85,6 @@ p {
 }
 
 @media (max-width: 880px) {
-    h1 {
-        font-size: 48px;
-    }
     .a-map {
         justify-content: start;
         align-items: start;
