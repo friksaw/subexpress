@@ -5,9 +5,8 @@
     border-radius: 16px;
     padding: 40px;
     margin-left: 32px;
-    max-width: 490px;
+    width: 490px;
     min-width: 240px;
-    width: 100%;
 
     input {
         margin: 12px 0;
@@ -32,7 +31,7 @@
     flex-direction: row;
 
     img {
-        margin: 0 12px 0 0;
+        margin: 16px 12px 0 0;
     }
 
     div {
@@ -46,7 +45,7 @@
 
 @media (max-width: 880px) {
     .form {
-        margin: 0 auto;
-        margin-top: 24px;
+        margin: 24px 0;
+        width: calc(100% - 80px);
     }
 }

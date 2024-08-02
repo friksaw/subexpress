@@ -44,6 +44,7 @@ p {
 }
 .txt-form-radio {
     color: #C4C4C4;
+    margin: 0;
 }
 .a-txt-form-radio,
 .txt-form-radio {
@@ -58,7 +59,7 @@ p {
     font-size: 16px;
     text-decoration: underline;
     color: black;
-    margin-top: 12px;
+    width: 100%;
 
     img {
         width: 16px;
@@ -81,4 +82,11 @@ p {
 }
 .txt-orange {
     color: rgba(252, 138, 34, 1);
+}
+
+@media (max-width: 880px) {
+    .a-map {
+        justify-content: start;
+        align-items: start;
+    }
 }
