@@ -78,6 +78,9 @@
 }
 
 @media (max-width: 840px) {
+    .controls {
+        display: none;
+    }
     .cards {
         height: fit-content;
         width: 300%;
