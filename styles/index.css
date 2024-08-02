@@ -31,7 +31,7 @@ body {
     background-repeat: no-repeat;
 
     .block1-desc {
-        margin: 64px 64px 94px 64px;
+        margin: 64px 64px 94px 8px;
     }
 
     .block1-cards {
@@ -112,7 +112,7 @@ body {
     margin: 8px;
 
     p {
-        margin: 8px 64px 0 0;
+        margin: 8px 28px 0 0;
     }
 }
 
@@ -120,11 +120,8 @@ body {
     display: flex;
     flex-direction: row;
 
-    img {
-        margin-right: 8px;
-    }
     p {
-        margin-left: 60px;
+        margin-left: 24px;
     }
 }
 .footer-contacts {
@@ -274,17 +271,13 @@ body {
     align-items: center;
 }
 
-.logo {
-    margin-right: 40px;
-}
-
 
 @media (max-width: 880px) {
     .h3s {
         flex-direction: column;
 
         h3 {
-            margin: 28px 0;
+            margin: 24px 0;
         }
     }
     .block1 {
