@@ -13,11 +13,26 @@
         height: 64px;
         border-radius: 52px;
         border: 1px solid rgba(252, 138, 34, 1);
-    }
-    input::placeholder {
+
         padding: 0 24px;
+        font-size: 18px;
+        font-family: "gilroy-thin", sans-serif;
+    }
+
+    input::placeholder {
         color: #B8B8B8;
         font-size: 18px;
+    }
+
+    input:focus {
+        padding: 0 24px;
+        border: 1px solid rgba(252, 138, 34, 1);
+        font-size: 18px;
+        font-family: "gilroy-thin", sans-serif;
+    }
+
+    input::-ms-value {
+
     }
 
     a {
