@@ -29,18 +29,18 @@ body {
     background-position-y: -200px;
     background-position-x: -200px;
     background-repeat: no-repeat;
+}
 
-    .block1-desc {
-        margin: 64px 8px 94px 8px;
-    }
+.block1-desc {
+    margin: 64px 8px 94px 8px;
+}
 
-    .block1-cards {
-        margin-right: -220px;
-        background-image: url("../assets/salat.png");
-        background-position: bottom;
-        background-repeat: no-repeat;
-        background-size: contain;
-    }
+.block1-cards {
+    margin-right: -220px;
+    background-image: url("../assets/salat.png");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: contain;
 }
 
 .block2 {
@@ -267,6 +267,10 @@ body {
 
 
 @media (max-width: 880px) {
+    .block1-cards {
+        display: none;
+    }
+
     .h3s {
         flex-direction: column;
 
