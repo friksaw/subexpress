@@ -23,6 +23,7 @@
     align-items: center;
     justify-content: center;
     text-align: center;
+
     img {
         margin: 0 12px;
     }
@@ -31,6 +32,7 @@
 .card1 {
     padding: 80px 60px;
 }
+
 .card1,
 .card2 {
     border-radius: 16px;
@@ -81,6 +83,7 @@
     .controls {
         display: none;
     }
+
     .cards {
         height: fit-content;
         width: 300%;
@@ -89,6 +92,7 @@
     .card1 {
         padding: 80px 24px;
     }
+
     .card1,
     .card2 {
         height: fit-content;
