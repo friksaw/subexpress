@@ -105,15 +105,42 @@
 
 .card-benefit-container {
     display: flex;
-    justify-content: space-between;
     flex-direction: column;
     padding: 0 32px;
     height: 100%;
     background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
     border-radius: 8px;
-    align-items: center;
+
+    div {
+        align-self: center;
+    }
 }
 
+@media (max-width: 1280px) {
+    .card-benefit,
+    .cards-benefits {
+        flex-direction: column;
+        width: 100% !important;
+    }
+
+    .card-benefit.active {
+        .card-benefit-container {
+            width: calc(100% - 64px);
+        }
+    }
+
+    .card-benefit-container,
+    .card-benefit {
+        min-height: 280px;
+        height: fit-content;
+        text-align: center;
+        align-items: center;
+
+        img {
+            align-self: center;
+        }
+    }
+}
 @media (max-width: 880px) {
     .card-benefits2-1,
     .card-benefits2-2,
@@ -129,16 +156,7 @@
         width: 100%;
     }
 
-    .card-benefit {
-        width: 100%;
-        flex-direction: column;
-    }
 
-    .card-benefit.active {
-        .card-benefit-container {
-            width: calc(100% - 64px);
-        }
-    }
 
     .card-benefits2-1,
     .card-benefits2-2,
@@ -149,23 +167,6 @@
     .card-benefits2-3-container,
     .card-benefits2-4-container {
         height: 600px !important;
-    }
-
-    .card-benefit-container,
-    .card-benefit {
-        min-height: 280px;
-        height: fit-content;
-        text-align: center;
-        align-items: center;
-
-        img {
-            align-self: center;
-        }
-    }
-
-    .cards-benefits {
-        flex-direction: column;
-        width: 100% !important;
     }
 
 }
