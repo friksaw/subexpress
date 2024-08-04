@@ -1,4 +1,4 @@
-.form {
+form {
     display: flex;
     flex-direction: column;
     background-color: white;
@@ -61,7 +61,7 @@
 }
 
 @media (max-width: 880px) {
-    .form {
+    form {
         margin: 24px 0;
         width: calc(100% - 80px);
     }

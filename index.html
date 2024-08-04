@@ -182,11 +182,11 @@
                     Заполните форму и наши менеджеры свяжутся с вами для оформления заявки на бесплатную дегустацию
                 </p>
             </div>
-            <div class="form">
-                <input placeholder="Имя или компания">
-                <input placeholder="Email">
-                <input placeholder="Телефон">
-                <a class="a-primary" style="height: 64px; width: 100%">
+            <form>
+                <input required maxlength="40" id="name" type="text" placeholder="Имя или компания">
+                <input required maxlength="40" id="email" type="email" placeholder="Email">
+                <input required maxlength="20" id="phone" type="text" placeholder="Телефон">
+                <a onclick="sendEmail()" class="a-primary" style="height: 64px; width: 100%">
                     Отправить
                 </a>
                 <div class="form-checkbox-container">
@@ -200,7 +200,7 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </form>
         </div>
     </div>
 <div class="block4">

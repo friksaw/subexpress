@@ -88,3 +88,23 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+
+const sendEmail = () => {
+    const name = $('#name').val();
+    const email = $('#email').val();
+    const phone = $('#phone').val();
+
+    Email.send({
+        Host : "Zakaz@subexpress.ru",
+        Username : "<Mailtrap username>",
+        Password : "<Mailtrap password>",
+        To : ' Zakaz@subexpress.ru ',
+        From : " name ",
+        Subject : "Test email",
+        Body : "<html><h2>${name}</h2><strong>${email}</strong><br></br><em>${phone}</em>"
+            </html>"
+    }).then(
+        message => alert(message)
+    );
+};

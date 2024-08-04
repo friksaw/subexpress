@@ -8,6 +8,7 @@
     width: 355px;
     border-radius: 48px;
     font-size: 22px;
+    cursor: pointer;
 }
 
 .a-primary {
