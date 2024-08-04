@@ -53,41 +53,6 @@ document.addEventListener("DOMContentLoaded", function() {
         carousel.classList.remove("dragging");
     };
 
-    const autoPlay = () => {
-
-        // Return if window is smaller than 800
-        if (window.innerWidth < 800) return;
-
-        // Calculate the total width of all cards
-        const totalCardWidth = carousel.scrollWidth;
-
-        // Calculate the maximum scroll position
-        const maxScrollLeft = totalCardWidth - carousel.offsetWidth;
-
-        // If the carousel is at the end, stop autoplay
-        if (carousel.scrollLeft >= maxScrollLeft) return;
-
-        // Autoplay the carousel after every 2500ms
-        timeoutId = setTimeout(() =>
-            carousel.scrollLeft += firstCardWidth, 2500);
-    };
-
-    carousel.addEventListener("mousedown", dragStart);
-    carousel.addEventListener("mousemove", dragging);
-    document.addEventListener("mouseup", dragStop);
-    wrapper.addEventListener("mouseenter", () =>
-        clearTimeout(timeoutId));
-    wrapper.addEventListener("mouseleave", autoPlay);
-
-    // Add event listeners for the arrow buttons to
-    // scroll the carousel left and right
-    arrowBtns.forEach(btn => {
-        btn.addEventListener("click", () => {
-            carousel.scrollLeft += btn.id === "left" ?
-                -firstCardWidth : firstCardWidth;
-        });
-    });
-});
 
 
 const sendEmail = () => {
@@ -96,15 +61,15 @@ const sendEmail = () => {
     const phone = $('#phone').val();
 
     Email.send({
-        Host : "Zakaz@subexpress.ru",
-        Username : "<Mailtrap username>",
-        Password : "<Mailtrap password>",
-        To : ' Zakaz@subexpress.ru ',
-        From : " name ",
-        Subject : "Test email",
-        Body : "<html><h2>${name}</h2><strong>${email}</strong><br></br><em>${phone}</em>"
-            </html>"
+        Host: "Zakaz@subexpress.ru",
+        Username: "<Mailtrap username>",
+        Password: "<Mailtrap password>",
+        To: ' Zakaz@subexpress.ru ',
+        From: " name ",
+        Subject: "Test email",
+        Body: "<html><h2>${name}</h2><strong>${email}</strong><br></br><em>${phone}</em>"
+            < /html>"
     }).then(
         message => alert(message)
     );
-};
+}}
