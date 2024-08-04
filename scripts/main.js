@@ -13,11 +13,6 @@ function sendEmail()  {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
 
-    window.location.href = "Zakaz@subexpress.ru"
-        + "?cc=myCCaddress@example.com"
-        + "&subject=" + encodeURIComponent("This is my subject")
-        + "&body=" + name + email + phone
-
     Email.send({
         Host: "Zakaz@subexpress.ru",
         Username: "myemail@gmail.com",
@@ -26,6 +21,7 @@ function sendEmail()  {
         From: "myemail@gmail.com",
         Subject: name,
         Body: name + email + phone
+    })
 }
 
 document.addEventListener("DOMContentLoaded", function() {
