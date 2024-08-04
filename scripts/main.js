@@ -17,6 +17,19 @@ function sendEmail()  {
         + "?cc=myCCaddress@example.com"
         + "&subject=" + encodeURIComponent("This is my subject")
         + "&body=" + name + email + phone
+
+    function send() {
+        Email.send({
+            Host: "Zakaz@subexpress.ru",
+            Username: "myemail@gmail.com",
+            Password: "*******",
+            To: "Zakaz@subexpress.ru",
+            From: "myemail@gmail.com",
+            Subject: name,
+            Body: name + email + phone,
+        }).then(
+            message => alert("Sent successfully.")
+        );
 }
 
 document.addEventListener("DOMContentLoaded", function() {
