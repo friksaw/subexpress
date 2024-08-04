@@ -20,7 +20,7 @@ body {
 }
 
 .block4 {
-    padding-top: 60px;
+    padding: 42px 0 0 0;
 }
 
 .block1 {
@@ -225,12 +225,6 @@ body {
             margin-bottom: 24px;
             flex-direction: column;
         }
-    }
-
-    .block4 {
-        padding-bottom: 20px;
-        margin-bottom: 0;
-
     }
 
     .footer-contacts,
