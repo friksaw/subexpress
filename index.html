@@ -186,7 +186,7 @@
                 <input required maxlength="40" id="name" type="text" placeholder="Имя или компания">
                 <input required maxlength="40" id="email" type="email" placeholder="Email">
                 <input required maxlength="20" id="phone" type="text" placeholder="Телефон">
-                <a onclick="sendEmail()" class="a-primary" style="height: 64px; width: 100%">
+                <a onclick="sendMessage()" class="a-primary" style="height: 64px; width: 100%">
                     Отправить
                 </a>
                 <div class="form-checkbox-container">
@@ -496,7 +496,9 @@
     </div>
 
 </main>
+
 <script src="scripts/main.js"></script>
+<script src="scripts/mail.php"></script>
 <script src="https://smtpjs.com/smtp.js"></script>
 </body>
 </html>

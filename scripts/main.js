@@ -20,6 +20,43 @@ function sendEmail()  {
         {token: "63cb3a19-2684-44fa-b76f-debf422d8b00"});
 }
 
+function sendMessage() {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    const subject = 'Website Change Request';
+
+    const data = {
+        to: 'Zakaz@subexpress.ru',
+        subject: subject,
+        from: email,
+        cc: 'susan@example.com',
+        message: name + email + phone
+    };
+
+    fetch('../scripts/mail.php', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Ошибка отправки письма');
+            }
+            return response.text();
+        })
+        .then(data => {
+            // Успешная отправка
+            alert('Письмо отправлено!');
+        })
+        .catch(error => {
+            console.error('Ошибка:', error);
+        });
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector(".carousel");
     const arrowBtns = document.querySelectorAll(".wrapper i");
