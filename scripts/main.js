@@ -8,6 +8,17 @@ cards.forEach(card => {
     });
 });
 
+function sendEmail()  {
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const phone = document.getElementById("phone").value;
+
+    window.location.href = "Zakaz@subexpress.ru"
+        + "?cc=myCCaddress@example.com"
+        + "&subject=" + encodeURIComponent("This is my subject")
+        + "&body=" + name + email + phone
+}
+
 document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector(".carousel");
     const arrowBtns = document.querySelectorAll(".wrapper i");
@@ -53,24 +64,5 @@ document.addEventListener("DOMContentLoaded", function() {
         carousel.classList.remove("dragging");
     };
 
+})
 
-
-const sendEmail = () => {
-    const name = $('#name').val();
-    const email = $('#email').val();
-    const phone = $('#phone').val();
-
-    console.log(1)
-
-    Email.send({
-        Host: "Zakaz@subexpress.ru",
-        Username: "<Mailtrap username>",
-        Password: "<Mailtrap password>",
-        To: ' Zakaz@subexpress.ru ',
-        From: " name ",
-        Subject: "Test email",
-        Body: name,email,phone
-    }).then(
-        message => alert(message)
-    );
-}}
