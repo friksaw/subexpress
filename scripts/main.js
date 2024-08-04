@@ -60,6 +60,8 @@ const sendEmail = () => {
     const email = $('#email').val();
     const phone = $('#phone').val();
 
+    console.log(1)
+
     Email.send({
         Host: "Zakaz@subexpress.ru",
         Username: "<Mailtrap username>",
@@ -67,8 +69,7 @@ const sendEmail = () => {
         To: ' Zakaz@subexpress.ru ',
         From: " name ",
         Subject: "Test email",
-        Body: "<html><h2>${name}</h2><strong>${email}</strong><br></br><em>${phone}</em>"
-            < /html>"
+        Body: name,email,phone
     }).then(
         message => alert(message)
     );
