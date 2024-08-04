@@ -13,15 +13,11 @@ function sendEmail()  {
     const email = document.getElementById("email").value;
     const phone = document.getElementById("phone").value;
 
-    Email.send({
-        Host: "Zakaz@subexpress.ru",
-        Username: "myemail@gmail.com",
-        Password: "*******",
-        To: "Zakaz@subexpress.ru",
-        From: "myemail@gmail.com",
-        Subject: name,
-        Body: name + email + phone
-    })
+    Email.send("Zakaz@subexpress.ru",
+        "Zakaz@subexpress.ru",
+        "This is a subject",
+        name + email + phone,
+        {token: "63cb3a19-2684-44fa-b76f-debf422d8b00"});
 }
 
 document.addEventListener("DOMContentLoaded", function() {
