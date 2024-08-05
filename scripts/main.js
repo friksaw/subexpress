@@ -11,7 +11,7 @@ function sendMessage() {
         subject: subject,
         from: email,
         cc: '',
-        message: name + email + phone
+        message: 'name: ' + name + '; email: ' + email + '; phone: ' + phone
     };
 
     fetch('../scripts/mail.php', {
@@ -28,7 +28,7 @@ function sendMessage() {
             return response.text();
         })
         .then(data => {
-            alert('Письмо отправлено!');
+            console.log('Письмо отправлено!');
         })
         .catch(error => {
             console.error('Ошибка:', error);

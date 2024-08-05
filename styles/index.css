@@ -27,12 +27,11 @@ body {
     background-position-y: -165px;
     background-position-x: -290px;
     background-repeat: no-repeat;
-
     overflow-x: hidden;
 }
 
 .block1-desc {
-    margin: 64px 8px 94px 8px;
+    margin: 110px 8px 94px 8px;
 
     a {
         margin: 0!important;
