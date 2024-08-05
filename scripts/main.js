@@ -7,7 +7,7 @@ function sendMessage() {
     const subject = `New request from ${name}`;
 
     const data = {
-        to: 'dani.dimitrievna@gmail.com',
+        to: 'Zakaz@subexpress.ru',
         subject: subject,
         from: email,
         cc: '',
@@ -28,6 +28,7 @@ function sendMessage() {
             return response.text();
         })
         .then(data => {
+            alert('Письмо отправлено!')
             console.log('Письмо отправлено!');
         })
         .catch(error => {
