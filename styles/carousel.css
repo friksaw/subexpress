@@ -1,21 +1,6 @@
-.cards {
-    display: flex;
-    margin: 40px 12px;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    width: 135%;
-}
 
-.cards2 {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    flex-direction: row;
-    width: 150%;
-    margin: 32px 0;
-    margin-left: 50%;
 
-}
+
 
 .controls {
     display: flex;
@@ -34,52 +19,17 @@
     }
 }
 
-.card1 {
-    padding: 80px 60px;
+
+
+
+.wrapper i:last-child {
+    margin: 12px;
+    transform: rotate(180deg);
 }
-
-.card1,
-.card2 {
-    border-radius: 16px;
-    background-color: #F7F7FA;
-    margin: 0 12px;
-    text-align: center;
-    transition: transform 0.5s ease;
-    font-size: 20px;
-
-    .card-author {
-        font-size: 16px;
-        margin: 30px 0;
-    }
-
-    .card-img-bg {
-        position: relative;
-        background-color: #FFF0E6;
-        border-radius: 8px 8px 0 0;
-        margin: 12px;
-        width: 50px;
-        height: 50px;
-    }
-
-    a {
-        background-color: #FFF0E6;
-        color: #FC8A22;
-        border-radius: 8px 8px 0 0;
-        padding: 4px 12px;
-    }
-}
-
-.card2 {
-    box-shadow: rgba(100, 100, 111, 0.15) 0px 5px 20px 0px;
-    margin: 20px;
-}
-
-
 
 .wrapper-products {
     width: 100%;
     position: relative;
-
 }
 
 .wrapper-products i {
@@ -144,6 +94,127 @@
 
 
 .carousel-products .card-products {
+    display: flex;
+    cursor: pointer;
+    padding: 16px 0;
+    width: 248px;
+    height: 235px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    border-radius: 16px;
+    background-color: #F7F7FA;
+    text-align: center;
+    transition: transform 0.5s ease;
+    font-size: 20px;
+
+    box-shadow: rgba(100, 100, 111, 0.15) 0px 5px 20px 0px;
+    margin: 20px 24px 40px 0;
+
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+
+    p {
+        margin-bottom: 24px;
+    }
+
+    a {
+        background-color: #FFF0E6;
+        color: #FC8A22;
+        margin-bottom: -18px;
+        border-radius: 8px 8px 0 0;
+        padding: 4px 12px;
+    }
+
+    .card-author {
+        font-size: 16px;
+        margin: 30px 0;
+    }
+
+    .card-img-bg {
+        width: 210px;
+        height: 200px;
+        background-color: #FFF0E6;
+        border-radius: 8px 8px 0 0;
+        margin-bottom: -50px;
+    }
+
+    img {
+        margin-top: -100px;
+    }
+}
+
+
+
+.wrapper-products-right {
+    width: 100%;
+    position: relative;
+}
+
+.wrapper-products-right i {
+    height: 37px;
+    width: 37px;
+    background-image: url("../assets/arrow-left.png");
+    text-align: center;
+    cursor: pointer;
+}
+
+.wrapper-products-right i:first-child {
+    margin: 12px;
+}
+
+.controls-products-right {
+    position: absolute;
+    top: -72px;
+    right: 33%;
+
+    i::before {
+        display: none;
+    }
+}
+
+.wrapper-products-right i:last-child {
+    margin: 12px;
+    transform: rotate(180deg);
+}
+
+.wrapper-products-right .carousel-products-right {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 0;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+}
+
+.carousel-products-right::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-products-right :where(.card-products-right, .img) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-products-right.dragging {
+    scroll-snap-type: none;
+    scroll-behavior: auto;
+}
+
+.carousel-products-right.no-transition {
+    scroll-behavior: auto;
+}
+
+.carousel-products-right.dragging .card-products-right {
+    cursor: grab;
+    user-select: none;
+}
+
+
+.carousel-products-right .card-products-right {
     display: flex;
     cursor: pointer;
     padding: 16px 0;

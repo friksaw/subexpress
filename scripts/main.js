@@ -198,3 +198,75 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    const carouselProductsRight = document.querySelector(".carousel-products-right");
+    const arrowBtnsProductsRight = document.querySelectorAll(".wrapper-products-right i");
+    const wrapperProductsRight = document.querySelector(".wrapper-products-right");
+
+    const firstCardProductsRight = carouselProductsRight.querySelector(".card-products-right");
+    const firstCardWidthProductsRight = firstCardProductsRight.offsetWidth;
+
+    let isDraggingProductsRight = false,
+        startXProductsRight,
+        startScrollLeftProductsRight,
+        timeoutIdProductsRight;
+
+    const dragStartProductsRight = (e) => {
+        isDraggingProductsRight = true;
+        carouselProductsRight.classList.add("dragging");
+        startXProductsRight = e.pageX;
+        startScrollLeftProductsRight = carouselProductsRight.scrollLeft;
+    };
+
+    const draggingProductsRight = (e) => {
+        if (!isDraggingProductsRight) return;
+
+        const newScrollLeftProductsRight = startScrollLeftProductsRight - (e.pageX - startXProductsRight);
+
+        if (newScrollLeftProductsRight <= 0 || newScrollLeftProductsRight >=
+            carouselProductsRight.scrollWidth - carouselProductsRight.offsetWidth) {
+
+            // If so, prevent further dragging
+            isDraggingProductsRight = false;
+            return;
+        }
+
+        carouselProductsRight.scrollLeft = newScrollLeftProductsRight;
+    };
+
+    const dragStopProductsRight = () => {
+        isDraggingProductsRight = false;
+        carouselProductsRight.classList.remove("dragging");
+    };
+
+    const autoPlayProductsRight = () => {
+        if (window.innerWidth < 800) return;
+
+        const totalCardWidthProductsRight = carouselProductsRight.scrollWidth;
+
+        const maxScrollLeftProductsRight = totalCardWidthProductsRight - carouselProductsRight.offsetWidth;
+
+        // If the carousel is at the end, stop autoplay
+        if (carouselProductsRight.scrollLeft >= maxScrollLeftProductsRight) return;
+
+        timeoutIdProductsRight = setTimeout(() =>
+            carouselProductsRight.scrollLeft += firstCardWidthProductsRight, 2500);
+    };
+
+    carouselProductsRight.addEventListener("mousedown", dragStartProductsRight);
+    carouselProductsRight.addEventListener("mousemove", draggingProductsRight);
+    document.addEventListener("mouseup", dragStopProductsRight);
+    wrapperProductsRight.addEventListener("mouseenter", () =>
+        clearTimeout(timeoutIdProductsRight));
+    wrapperProductsRight.addEventListener("mouseleave", autoPlayProductsRight);
+
+    // Add event listeners for the arrow buttons to
+    // scroll the carousel left and right
+    arrowBtnsProductsRight.forEach(btn => {
+        btn.addEventListener("click", () => {
+            carouselProductsRight.scrollLeft += btn.id === "left-products-right" ?
+                -firstCardWidthProductsRight : firstCardWidthProductsRight;
+        });
+    });
+});
