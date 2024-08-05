@@ -35,12 +35,12 @@ function sendMessage() {
         });
 }
 
-const cards = document.querySelectorAll('.card-benefit');
+const cardsBenefit = document.querySelectorAll('.card-benefit');
 
-cards[1].classList.add('active')
-cards.forEach(card => {
+cardsBenefit[1].classList.add('active')
+cardsBenefit.forEach(card => {
     card.addEventListener('mouseover', () => {
-        cards.forEach(c => c.classList.remove('active'));
+        cardsBenefit.forEach(c => c.classList.remove('active'));
         card.classList.add('active')
     });
 });
@@ -122,6 +122,79 @@ document.addEventListener("DOMContentLoaded", function() {
         btn.addEventListener("click", () => {
             carousel.scrollLeft += btn.id === "left" ?
                 -firstCardWidth : firstCardWidth;
+        });
+    });
+});
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const carouselProducts = document.querySelector(".carousel-products");
+    const arrowBtnsProducts = document.querySelectorAll(".wrapper-products i");
+    const wrapperProducts = document.querySelector(".wrapper-products");
+
+    const firstCardProducts = carouselProducts.querySelector(".card-products");
+    const firstCardWidthProducts = firstCardProducts.offsetWidth;
+
+    let isDraggingProducts = false,
+        startXProducts,
+        startScrollLeftProducts,
+        timeoutIdProducts;
+
+    const dragStartProducts = (e) => {
+        isDraggingProducts = true;
+        carouselProducts.classList.add("dragging");
+        startXProducts = e.pageX;
+        startScrollLeftProducts = carouselProducts.scrollLeft;
+    };
+
+    const draggingProducts = (e) => {
+        if (!isDraggingProducts) return;
+
+        const newScrollLeftProducts = startScrollLeftProducts - (e.pageX - startXProducts);
+
+        if (newScrollLeftProducts <= 0 || newScrollLeftProducts >=
+            carouselProducts.scrollWidth - carouselProducts.offsetWidth) {
+
+            // If so, prevent further dragging
+            isDraggingProducts = false;
+            return;
+        }
+
+        carouselProducts.scrollLeft = newScrollLeftProducts;
+    };
+
+    const dragStopProducts = () => {
+        isDraggingProducts = false;
+        carouselProducts.classList.remove("dragging");
+    };
+
+    const autoPlayProducts = () => {
+        if (window.innerWidth < 800) return;
+
+        const totalCardWidthProducts = carouselProducts.scrollWidth;
+
+        const maxScrollLeftProducts = totalCardWidthProducts - carouselProducts.offsetWidth;
+
+        // If the carousel is at the end, stop autoplay
+        if (carouselProducts.scrollLeft >= maxScrollLeftProducts) return;
+
+        timeoutIdProducts = setTimeout(() =>
+            carouselProducts.scrollLeft += firstCardWidthProducts, 2500);
+    };
+
+    carouselProducts.addEventListener("mousedown", dragStartProducts);
+    carouselProducts.addEventListener("mousemove", draggingProducts);
+    document.addEventListener("mouseup", dragStopProducts);
+    wrapperProducts.addEventListener("mouseenter", () =>
+        clearTimeout(timeoutIdProducts));
+    wrapperProducts.addEventListener("mouseleave", autoPlayProducts);
+
+    // Add event listeners for the arrow buttons to
+    // scroll the carousel left and right
+    arrowBtnsProducts.forEach(btn => {
+        btn.addEventListener("click", () => {
+            carouselProducts.scrollLeft += btn.id === "left-products" ?
+                -firstCardWidthProducts : firstCardWidthProducts;
         });
     });
 });

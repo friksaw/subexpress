@@ -6,7 +6,6 @@ body {
 .header,
 .footer,
 .block1,
-.block2,
 .block3,
 .block4,
 .block5,
@@ -25,9 +24,8 @@ body {
 
 .block1 {
     background-image: url("../assets/lines.svg");
-    background-size: contain;
-    background-position-y: -200px;
-    background-position-x: -200px;
+    background-position-y: -165px;
+    background-position-x: -290px;
     background-repeat: no-repeat;
 
     overflow-x: hidden;
@@ -35,14 +33,18 @@ body {
 
 .block1-desc {
     margin: 64px 8px 94px 8px;
+
+    a {
+        margin: 0!important;
+    }
 }
 
 .block1-cards {
     margin-right: -220px;
     background-image: url("../assets/salat.png");
-    background-position: bottom;
+    background-position: left bottom;
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: 22%;
 }
 
 .block2 {
@@ -50,10 +52,18 @@ body {
     background-repeat: no-repeat;
     background-size: contain;
     overflow-x: hidden;
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 48px 0 60px 0;
 
     background-image: url("../assets/lines.svg");
     background-position: top;
+
+    .h3s {
+        margin-bottom: 0;
+    }
 
     .container {
         flex-direction: column;
@@ -73,13 +83,17 @@ body {
 .block3 {
     background-color: rgba(252, 138, 34, 1);
     flex-direction: row;
-    padding: 60px 40px;
+    padding: 72px 40px;
 
     .block3-desc {
         display: flex;
         flex-direction: column;
         justify-content: center;
         width: 65%;
+
+        p {
+            width: 66%;
+        }
     }
 }
 
@@ -175,20 +189,30 @@ body {
 
 
 @media (max-width: 880px) {
+    .block1,
+    .block2 {
+        background-size: cover;
+    }
+
+    .block2,
+    .block4 {
+        p,a {
+            padding: 0 40px;
+        }
+    }
+    
+    .block2 {
+        .a-primary {
+            margin-left: -40px;
+        }
+    }
+    
     .header-h1s {
         flex-direction: column;
     }
 
     .block1-cards {
         display: none;
-    }
-
-    .h3s {
-        flex-direction: column;
-
-        h3 {
-            margin: 24px 0;
-        }
     }
 
     .block1 {
@@ -209,12 +233,17 @@ body {
 
 
     .block3 {
+        padding: 60px 40px 20px 40px;
         .container {
             flex-direction: column;
         }
 
         .block3-desc {
             width: 100%;
+
+            p {
+                width: 100%;
+            }
         }
     }
 

@@ -34,10 +34,6 @@
     input::-ms-value {
 
     }
-
-    a {
-        margin-top: 12px;
-    }
 }
 
 
@@ -63,7 +59,8 @@
 @media (max-width: 880px) {
     .form {
         margin: 24px 0;
-        width: calc(100% - 80px);
+        width: calc(100% - 24px);
+        padding: 20px 24px 28px 24px;
     }
 
     .form-checkbox-container {
