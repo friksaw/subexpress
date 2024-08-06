@@ -29,6 +29,45 @@
     margin-top: 40px;
 }
 
+.control {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+}
+
+.control input {
+    display: none; /* Скрываем стандартный чекбокс */
+}
+
+.control__indicator {
+    width: 20px; /* Ширина */
+    height: 20px; /* Высота */
+    background: rgba(252, 138, 34, 1); /* Задний фон */
+    border-radius: 4px; /* Закругленные углы (по желанию) */
+    position: relative;
+    transition: background 0.3s;
+}
+
+.control input:checked + .control__indicator {
+    background: rgba(252, 138, 34, 0.7); /* Изменение фона при checked (по желанию) */
+}
+
+/* Если нужно добавить псевдоэлемент для галочки */
+.control__indicator::after {
+    content: '';
+    position: absolute;
+    width: 4px; /* Ширина галочки */
+    height: 10px; /* Высота галочки */
+    left: 7px; /* Расположение галочки */
+    top: 2px; /* Расположение галочки */
+    border: solid white; /* Цвет галочки */
+    border-width: 0 2px 2px 0; /* Формируем галочку */
+    transform: rotate(45deg); /* Поворот для галочки */
+}
+
+.control input:checked + .control__indicator::after {
+    opacity: 1; /* Показ галочки, когда чекбокс отмечен */
+}
 @media (max-width: 880px) {
     .btns-group {
         flex-direction: column;

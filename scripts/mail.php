@@ -13,6 +13,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = trim($name);
     $email = trim($email);
 
+    // Проверка наличия телефона в данных формы (если есть поле для телефона)
+    if (isset($_POST['phone'])) {
+        $phone = $_POST['phone'];
+    } else {
+        $phone = 'Телефон не указан'; // Замените на нужное сообщение или оставьте пустым
+    }
+
     // Подготовка заголовков для письма
     $headers = "From: Zakaz@subexpress.ru\r\n";
     $headers .= "Reply-To: $email\r\n";
@@ -21,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Формирование текста письма
     $message = "ФИО: $name<br>";
     $message .= "E-mail: $email<br>";
-    $phone = $_POST['phone'];
     $message .= "Телефон: $phone<br>";
 
     // Отправка письма
